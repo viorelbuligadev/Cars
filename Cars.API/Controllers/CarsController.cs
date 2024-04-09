@@ -7,11 +7,11 @@ namespace Cars.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CarsController(IMediator mediator)
+    public class CarController(IMediator mediator)
     {
         private readonly IMediator _mediator = mediator;
 
-        [HttpGet("carsstream")]
+        [HttpGet("stream")]
         public IAsyncEnumerable<CarDto> StreamBooks()
         {
             IAsyncEnumerable<CarDto> stream = _mediator.CreateStream<CarDto>(new CarsQuery());

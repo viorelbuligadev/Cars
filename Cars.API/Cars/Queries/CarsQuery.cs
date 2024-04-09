@@ -25,7 +25,7 @@ public class CarsQueryHandler(CarsContext carsContext, IMapper mapper)
         await foreach (var carFromDb in carQuery)
         {
             // add a delay to visually see the effect
-            await Task.Delay(500);
+            await Task.Delay(1000);
             yield return _mapper.Map<CarDto>(carFromDb); ;
         }
     }
